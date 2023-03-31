@@ -4,10 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
-public class homeWork extends TestBase {
+public class HomeWork extends TestBase {
     @Test
     void practiceFormTest() {
 
@@ -28,6 +27,8 @@ public class homeWork extends TestBase {
                 gender = "Male";
 
         open("/automation-practice-form");
+        executeJavaScript("$('footer').remove()");
+        executeJavaScript("$('#fixedban').remove()");
 
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
